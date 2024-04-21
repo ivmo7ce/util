@@ -12,7 +12,7 @@ logger -t "$SCRIPT_NAME" user.debug "sshd_config saved in $BACKUP_FILE_NAME"
 
 
 # replace initial sshd_config with template one
-cp ~/viento/openssh/sshd_config.template /etc/ssh/sshd_config
+cp sshd_config.template /etc/ssh/sshd_config
 logger -t "$SCRIPT_NAME" user.debug "sshd_config replaced with template"
 
 
@@ -24,7 +24,7 @@ chmod 600 ~/.ssh/authorized_keys
 
 echo '' > ~/.ssh/authorized_keys
 
-for file in ~/viento/pub/*.pub; do
+for file in keys/*.pub; do
   cat "$file" >> ~/.ssh/authorized_keys
 done
 logger -t "$SCRIPT_NAME" user.debug "keys copied"
