@@ -2,7 +2,7 @@
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 SCRIPT_NAME=$(basename "$0")
-logger user.info "run $SCRIPT_NAME in $SCRIPT_DIR"
+logger -t "$SCRIPT_NAME" user.info "run $SCRIPT_NAME in $SCRIPT_DIR"
 
 
 # backup existing sshd_config
